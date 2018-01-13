@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理模板</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all">
+		<!--<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">-->
+		<link rel="stylesheet" href="css/style.css"/>
+
+	</head>
+
+	<body bgcolor="#e7e7e7">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header header header-demo">
+				<div class="layui-main">
+					<div class="admin-login-box">
+						<i class="logo-pic">
+							<img src="images/jp-logo.png" alt="" width="48" height="48"/>
+						</i>
+						<div class="logo">
+							金鹏网格化综治信息管理平台
+							<em>
+								——&nbsp;&nbsp;综治视联网中心子系统
+							</em>
+						</div>
+					</div>
+					<ul class="layui-nav admin-header-item">
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="admin-header-user">
+								<img src="images/0.jpg" />
+								<p class="inf-con">
+									<span class="inf-name depart">人防部</span>
+									<span class="inf-name">李俊凯</span>
+								</p>
+							</a>
+
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="tips">
+								<img src="images/tips.png" alt=""/>
+								<span class="num">8</span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="tips">
+								<img src="images/set.png" alt=""/>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+								</dd>
+								<dd>
+									<a href="javascript:;"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+										<i class="fa fa-lock" aria-hidden="true" ></i> 锁屏 (Alt+L)
+									</a>
+								</dd>
+								<dd>
+									<a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="tips">
+								<img src="images/back-btn.png" alt=""/>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+								</dd>
+								<dd>
+									<a href="javascript:;"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
+								</dd>
+								<dd id="lock">
+									<a href="javascript:;">
+										<i class="fa fa-lock" aria-hidden="true" ></i> 锁屏 (Alt+L)
+									</a>
+								</dd>
+								<dd>
+									<a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="video1">
+							<a href="javascript:;" class="tips">
+								<img src="images/quit.png" alt=""/>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="layui-side layui-bg-black" id="admin-side">
+				<div class="layui-side-scroll" id="admin-navbar-side" lay-filter="side">
+					<ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav1.png" alt=""/>
+								</i>
+								<cite>综治机构管理</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav2.png" alt=""/>
+								</i>
+								<cite>综治队伍</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav3.png" alt=""/>
+								</i>
+								<cite>群防群治组织</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav4.png" alt=""/>
+								</i>
+								<cite>群防群治队伍</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav5.png" alt=""/>
+								</i>
+								<cite>综治中心</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item  layui-nav-itemed">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav5.png" alt=""/>
+								</i>
+								<cite>综治视联网中心</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">综治视联网信息中心表单</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+										综治视联网信息中心列表
+										<span>4</span>
+									</a>
+								</dd>
+								<dt class="three-menu"><a href="javascript:;">集资诈骗罪</a></dt>
+								<dd>
+									<a href="javascript:;">综治视联网信息中心修改</a>
+									<span class="icons layui-nav-more"></span>
+								</dd>
+								<dt class="three-menu"><a href="javascript:;">集资诈骗罪</a></dt>
+								<dd>
+									<a href="">综治视联网信息中心地理位置</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav7.png" alt=""/>
+								</i>
+								<cite>网格化建设</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav8.png" alt=""/>
+								</i>
+								<cite>楼栋长</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav5.png" alt=""/>
+								</i>
+								<cite>综治领导责任制</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-cubes">
+									<img src="images/nav7.png" alt=""/>
+								</i>
+								<cite>重特大案件</cite>
+								<span class="icons layui-nav-more"></span>
+							</a>
+						</li>
+					</ul>
+					<div class="bottom-copy">
+						<span class="icons">金鹏信息  技术支持</span>
+					</div>
+				</div>
+			</div>
+			<div class="layui-body" id="admin-body">
+				<div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
+					<ul class="layui-tab-title">
+						<li>
+							<i class="fa fa-dashboard" aria-hidden="true"></i>
+							<cite>事件位置</cite>
+							<i class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i>
+
+						</li>
+						<li class="layui-this">
+							<i class="fa fa-dashboard" aria-hidden="true"></i>
+							<cite>命案防控信息采集</cite>
+							<i class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i>
+						</li>
+						<div class="fixed-tab">更多内容</div>
+						<dl class="tab-menu">
+							<dd>
+								<a href="javascript:;"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+							</dd>
+							<dd>
+								<a href="javascript:;"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
+							</dd>
+						</dl>
+					</ul>
+					<div class="layui-tab-content" style="min-height: 150px;">
+						<div class="layui-tab-item layui-show">
+							<iframe src="table.html"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript" src="plugins/layui/layui.js"></script>
+			<script src="js/jquery-1.8.3.min.js"></script>
+			<!--<script type="text/javascript" src="datas/nav.js"></script>-->
+			<!--<script src="js/index.js"></script>-->
+			<script>
+				layui.config({
+					base: 'js/'
+				}).use(['element', 'layer', 'navbar', 'tab'], function() {
+					var element = layui.element(),
+							$ = layui.jquery,
+							layer = layui.layer,
+							navbar = layui.navbar(),
+							tab = layui.tab({
+								elem: '.admin-nav-card' //设置选项卡容器
+							});
+					//iframe自适应
+					$(window).on('resize', function() {
+						var $content = $('.admin-nav-card .layui-tab-content');
+						$content.height($(this).height() - 147);
+						$content.find('iframe').each(function() {
+							$(this).height($content.height());
+						});
+					}).resize();
+
+					navbar.render();
+					//监听点击事件
+					navbar.on('click(side)', function(data) {
+						tab.tabAdd(data.field);
+					});
+				});
+
+
+				$('.layui-nav-child dd').click(function () {
+					$(this).next(".three-menu").toggle();
+//					$(this).children(".layui-nav-more").css({"background-position":"-130px -8px" }).siblings().css({"background-position":"-106px -8px;" })
+				});
+
+			</script>
+		</div>
+	</body>
+
+</html>
