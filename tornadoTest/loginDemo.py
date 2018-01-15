@@ -4,6 +4,13 @@ import tornado.web
 import tornado.escape
 import os
 from jinja2 import FileSystemLoader,Environment
+import sys
+import sys
+defaultencoding = 'utf-8'
+if sys.getdefaultencoding() != defaultencoding:
+    reload(sys)
+    sys.setdefaultencoding(defaultencoding)
+
 class BaseHandler(tornado.web.RequestHandler):
     _path_to_env = {}
     def get_current_user(self):
@@ -34,7 +41,7 @@ class MainHandler(BaseHandler):
         # if not self.current_user:
         #     self.redirect("/login")
         #     return
-        items=["a","b"]
+        items=["天","b"]
         name = tornado.escape.xhtml_escape(self.current_user)
         self.finish(self.render_string("main.html",title="ceshi",name=name,items=items))
         # self.render(self.get_template_path()+"main.html",title="ceshi",name=name,items=items)
