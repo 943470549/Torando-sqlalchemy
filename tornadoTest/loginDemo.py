@@ -61,7 +61,7 @@ settings = {
 application2 = tornado.web.Application([
     (r'/',MainHandler),
     (r'/login',LoginHandler),
-    (r"/(apple-touch-icon\.jpg)", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
+    (r'/(.*)', tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
 ],**settings)
 if __name__ == "__main__":
     application2.listen(7001)
