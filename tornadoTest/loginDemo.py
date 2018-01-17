@@ -5,11 +5,28 @@ import tornado.escape
 import os
 from jinja2 import FileSystemLoader,Environment
 import sys
-import sys
+# 全局编码
 defaultencoding = 'utf-8'
 if sys.getdefaultencoding() != defaultencoding:
     reload(sys)
     sys.setdefaultencoding(defaultencoding)
+# 全局异常
+def write_error(self, status_code, **kwargs):
+    if status_code == 404:
+        self.write("404")
+    elif status_code == 500:
+        self.render('public/500.html')
+    else:
+        self.write('error:' + str(status_code))
+tornado.web.RequestHandler.write_error=write_error
+# application配置
+settings = {
+    "static_path": os.path.join(os.path.dirname(__file__), "static"),
+    "cookie_secret": "61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
+    "login_url": "/login",
+    "xsrf_cookies": True,
+    "debug":False,
+}
 
 class BaseHandler(tornado.web.RequestHandler):
     _path_to_env = {}
@@ -35,6 +52,7 @@ class BaseHandler(tornado.web.RequestHandler):
         namespace = self.get_template_namespace()
         namespace.update(kwargs)
         return t.render(**namespace)
+
 class MainHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
@@ -52,12 +70,8 @@ class LoginHandler(BaseHandler):
     def post(self, *args, **kwargs):
         self.set_secure_cookie("user",self.get_argument("name"))
         self.redirect("/")
-settings = {
-    "static_path": os.path.join(os.path.dirname(__file__), "static"),
-    "cookie_secret": "61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
-    "login_url": "/login",
-    "xsrf_cookies": True
-}
+
+
 application2 = tornado.web.Application([
     (r'/',MainHandler),
     (r'/login',LoginHandler),
